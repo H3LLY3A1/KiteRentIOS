@@ -9,7 +9,7 @@ struct ArrowUpDownAnimation: View {
             .foregroundColor(.white)
             .offset(y: moveUp ? -5 : 5)
             .animation(
-                Animation.easeInOut(duration: 1)
+                .easeInOut(duration: 1)
                     .repeatForever(autoreverses: true),
                 value: moveUp
             )
@@ -18,3 +18,4 @@ struct ArrowUpDownAnimation: View {
             }
     }
 }
+
