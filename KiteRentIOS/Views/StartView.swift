@@ -4,11 +4,11 @@ struct StartView: View {
     var body: some View {
         ZStack {
             LinearGradient(
-                gradient: Gradient(colors: [Color.blue.opacity(0.9), Color("GradientBottom")]),
+                gradient: Gradient(colors: [Color.blue.opacity(0.9), Color.gradientBottom]),
                 startPoint: .top,
                 endPoint: .bottom
             )
-            .ignoresSafeArea()
+            .ignoresSafeArea(.all)
 
             VStack(spacing: 30) {
                 Spacer()
@@ -58,4 +58,11 @@ extension Color {
 
 #Preview {
     StartView()
+        .preferredColorScheme(.light)
 }
+
+#Preview("Dark Mode") {
+    StartView()
+        .preferredColorScheme(.dark)
+}
+
