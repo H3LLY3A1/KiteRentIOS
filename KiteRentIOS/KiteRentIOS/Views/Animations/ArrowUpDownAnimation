@@ -1,0 +1,21 @@
+import SwiftUI
+
+struct ArrowUpDownAnimation: View {
+    @State private var moveUp = false
+
+    var body: some View {
+        Image(systemName: "chevron.up")
+            .font(.system(size: 20, weight: .medium))
+            .foregroundColor(.white)
+            .offset(y: moveUp ? -5 : 5)
+            .animation(
+                .easeInOut(duration: 1)
+                    .repeatForever(autoreverses: true),
+                value: moveUp
+            )
+            .onAppear {
+                moveUp = true
+            }
+    }
+}
+
